@@ -4,9 +4,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import OrderPage from './components/pages/OrderPage.jsx';
-import LoginPage from './components/pages/LoginPage.jsx';
-import ErrorPage from './components/pages/ErrorPage.jsx';
+import OrderPage from './components/pages/order/OrderPage.jsx';
+import LoginPage from './components/pages/login/LoginPage.jsx';
+import ErrorPage from './components/pages/error/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
