@@ -11,15 +11,11 @@ export default function NavBar() {
   const handleClickDeconnexion = () => {
     navigate("/");
   };
-  const handleClickOnLogo = () => {
-    navigate(`/order/${username}`);
-  };
-  
 
   return (
     <NavBarStyled>
-      <Logo className={"logo"} onClick={handleClickOnLogo}/>
-      <div className="name-deconnexion-icon-container">
+      <Logo className={"logo"} onClick={()=> window.location.reload()}/>
+      <div className="container">
         <div className="name-deconnexion-container">
           <p>
             Hey, <span>{username}</span>
@@ -54,7 +50,7 @@ margin: 0 auto;
       height: 60px;
     }
   }
-  .name-deconnexion-icon-container {
+  .container {
     width: 50%;
     display: flex;
     justify-content: right;

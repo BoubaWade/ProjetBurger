@@ -7,7 +7,6 @@ export default function Main() {
   )
 }
 const MainStyled = styled.div`
-height: 100%;
 max-width: 1400px;
 height: calc(100% - 100px);
 background-color: #F5F5F7;
