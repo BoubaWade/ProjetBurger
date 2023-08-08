@@ -1,13 +1,13 @@
 import styled from "styled-components";
 //import logoOrange from "../assets/images/logo-orange.png";
-import logoOrange from "../../assets/images/logo-orange.png";
+import logoOrange from "../../../public/images/logo-orange.png";
 import { theme } from "../../theme/indEx";
 //import { Navigate } from "react-router-dom";
 
-export default function Logo({onClick}) {
+export default function Logo({onClick, className}) {
   
   return (
-    <LogoStyled className={"logo"} onClick={onClick}>
+    <LogoStyled className={className} onClick={onClick}>
       <h1>CRAZEE</h1>
       <img src={logoOrange} />
       <h1>BURGER</h1>

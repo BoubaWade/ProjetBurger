@@ -81,7 +81,6 @@ margin: 0 auto;
                 left: 50%;
                 transform: translateX(-50%);
             }
-
         }
       }
     }
