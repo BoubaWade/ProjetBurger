@@ -1,22 +1,38 @@
 import { BsPersonCircle } from "react-icons/Bs";
-import Logo from "../../reusableUI/Logo.jsx";
+import Logo from "../../../reusableUI/Logo.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { styled } from "styled-components";
-import { theme } from "../../../theme/indEx.jsx";
+import { theme } from "../../../../theme/indEx.jsx";
+import ToggleButton from "./ToggleButton.jsx";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 export default function NavBar() {
   const { username } = useParams();
   const navigate = useNavigate();
-
+  const [isChecked, setIsChecked] = useState(false);
   const handleClickDeconnexion = () => {
     navigate("/");
   };
 
+  const handleChecked = () => {
+    setIsChecked(!isChecked);
+    if (!isChecked) notify();
+  };
+  const notify = () => {
+    toast.info("Mode admin activé");
+  };
+
   return (
     <NavBarStyled>
-      <Logo className={"logo"} onClick={()=> window.location.reload()}/>
+      <Logo className={"logo"} onClick={() => window.location.reload()} />
       <div className="container">
-        <div className="name-deconnexion-container">
+        <ToggleButton
+          onToggle={handleChecked}
+          labelIfChecked={"DÉSACTIVER LE MODE ADMIN"}
+          labelIfUnchecked={"ACTIVER LE MODE ADMIN"}
+        />
+        <div className="username-deconnexion-container">
           <p>
             Hey, <span>{username}</span>
           </p>
@@ -29,8 +45,8 @@ export default function NavBar() {
 }
 
 const NavBarStyled = styled.div`
-background-color: ${theme.colors.background_white};
-margin: 0 auto;
+  background-color: ${theme.colors.background_white};
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,31 +72,31 @@ margin: 0 auto;
     justify-content: right;
     align-items: center;
     font-family: "Open Sans", sans-serif;
-    .name-deconnexion-container {
-        color: ${theme.colors.greyBlue};
-        p {
-            font-size: 16px;
-        }
-        span {
-            color: ${theme.colors.primary};
+    .username-deconnexion-container {
+      color: ${theme.colors.greyBlue};
+      p {
+        font-size: 16px;
       }
-      button{
+      span {
+        color: ${theme.colors.primary};
+      }
+      button {
         position: relative;
         background: none;
         border: none;
         color: ${theme.colors.greyBlue};
         cursor: pointer;
-        &:hover{
-            &::after{
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 1px;
-                background-color:${theme.colors.greyBlue};
-                top: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+        &:hover {
+          &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: ${theme.colors.greyBlue};
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
       }
     }

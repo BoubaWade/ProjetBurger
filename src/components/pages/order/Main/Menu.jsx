@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { fakeMenu2 } from "../../../fakeData/fakeMenu";
+import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
 import { styled } from "styled-components";
-import Card from "../../reusableUI/Card.jsx";
-import { formatPrice } from "../../../utils/maths";
+import Card from "../../../reusableUI/Card.jsx";
+import { formatPrice } from "../../../../utils/maths";
 
 export default function Menu() {
   const [products, setProducts] = useState(fakeMenu2);

@@ -1,19 +1,19 @@
 import { styled } from "styled-components";
-import Main from "./Main";
-import NavBar from "./NavBar";
+import Main from "./Main/Main.jsx";
+import NavBar from "./NavBar/NavBar.jsx";
 import { theme } from "../../../theme/indEx";
 
-export default function OrderPage() { 
+export default function OrderPage() {
   return (
     <OrderPageStyled>
       <NavBar />
-      <Main/>  
+      <Main />
     </OrderPageStyled>
-  )
+  );
 }
 
-const  OrderPageStyled= styled.div`
-height: 100vh;
-background-color: ${theme.colors.primary};
-padding: 20px 0;  
+const OrderPageStyled = styled.div`
+  height: 100vh;
+  background-color: ${theme.colors.primary};
+  padding: 20px 0;
 `;
