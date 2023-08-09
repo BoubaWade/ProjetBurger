@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../../../theme/indEx.jsx";
-import PopUpToast from "../Main/PopUpToast.jsx";
+import { theme } from "../../theme/indEx.jsx";
+import PopUpToast from "../pages/order/Main/PopUpToast.jsx";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ToggleButton({
@@ -34,13 +34,11 @@ const ToggleButtonStyled = styled.div`
   /* border: 1px solid red; */
 
   display: flex;
-  margin-right: 50px;
   input[type="checkbox"] {
     // Hides the square box but keeps the core "toggle functionality"
     &.toggle {
       display: none;
     }
-
     &.toggle + label {
       display: inline-block;
       height: 40px;

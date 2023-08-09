@@ -3,21 +3,22 @@ import Logo from "../../../reusableUI/Logo.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { styled } from "styled-components";
 import { theme } from "../../../../theme/indEx.jsx";
-import ToggleButton from "./ToggleButton.jsx";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import ToggleButton from "../../../reusableUI/ToggleButton.jsx";
 
 export default function NavBar() {
   const { username } = useParams();
   const navigate = useNavigate();
-  const [isChecked, setIsChecked] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
   const handleClickDeconnexion = () => {
     navigate("/");
   };
 
   const handleChecked = () => {
-    setIsChecked(!isChecked);
-    if (!isChecked) notify();
+    if (!isAdmin) notify();
+    setIsAdmin(!isAdmin);
   };
   const notify = () => {
     toast.info("Mode admin activé");
@@ -74,6 +75,7 @@ const NavBarStyled = styled.div`
     font-family: "Open Sans", sans-serif;
     .username-deconnexion-container {
       color: ${theme.colors.greyBlue};
+      margin-left: 50px;
       p {
         font-size: 16px;
       }
