@@ -51,6 +51,7 @@ const NavBarStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 95vw;
   max-width: 1400px;
   height: 100px;
   padding: 0 70px 0 15px;
