@@ -19,7 +19,7 @@ const  PrimaryButtonStyled= styled.button`
     align-items: center;
     background-color: ${theme.colors.primary_burger};
     color: ${theme.colors.white};
-    font-size: 15px;
+    font-size: 12px;
     border-radius: ${theme.borderRadius.round};
     font-weight: 700;
     line-height: 15px;
