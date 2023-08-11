@@ -12,12 +12,12 @@ export default function Profil() {
   };
   return (
     <ProfilStyled>
-      <divc>
+      <div>
         <p>
           Hey, <span>{username}</span>
         </p>
         <button onClick={handleClickDeconnexion}>Se déconnecter</button>
-      </divc>
+      </div>
       <BsPersonCircle className="icon" />
     </ProfilStyled>
   );

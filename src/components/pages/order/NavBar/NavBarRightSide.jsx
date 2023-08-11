@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ToggleButton from "../../../reusableUI/ToggleButton";
 import { styled } from "styled-components";
 import { toast } from "react-toastify";
 import Profil from "./Profil";
+import AdminContext from "../../../../context/AdminContext";
 
 export default function NavBarRightSide() {
-  const [isAdmin, setIsAdmin] = useState(false);
+  //const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin, setIsAdmin } = useContext(AdminContext);
 
   const displayToastAdmin = () => {
     if (!isAdmin) notify();
