@@ -3,23 +3,29 @@ import { styled } from "styled-components";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
+import PanelButton from "../../../reusableUI/PanelButton";
 
 export default function PanelAdmin() {
   return (
     <PanelAdminStyled>
       <div className="panel-top">
-        <button className="chevron-button">
-          <FiChevronDown className="icon-chevron-down" />
-          <FiChevronUp className="icon-chevron-up" />
-        </button>
-        <button>
-          <AiOutlinePlus className="icon-plus" />
-          <span>Ajouter un produit</span>
-        </button>
-        <button>
-          <MdModeEditOutline className="icon-edit" />
-          <span>Modifier un produit</span>
-        </button>
+        <PanelButton
+          className={"chevron-button"}
+          Icon={<FiChevronUp className="icon-chevron-down" />}
+        />
+        <PanelButton
+          className={"chevron-button"}
+          Icon={<FiChevronDown className="icon-chevron-down" />}
+        />
+
+        <PanelButton
+          Icon={<AiOutlinePlus className="icon-edit" />}
+          label={"Ajouter un produit"}
+        />
+        <PanelButton
+          Icon={<MdModeEditOutline className="icon-edit" />}
+          label={"Modifier un produit"}
+        />
       </div>
       <div className="panel-bottom">panel bottom</div>
     </PanelAdminStyled>
@@ -28,45 +34,27 @@ export default function PanelAdmin() {
 
 const PanelAdminStyled = styled.div`
   //display: none;
-  width: 95%;
+  //width: 95%;
+  width: 95vw;
+  max-width: 1400px;
   height: 290px;
   position: absolute;
+  //position: fixed;
   right: 2.5vw;
   bottom: 20px;
+  //left:0;
+  //right: 0;
   //bottom: 0;
-  //transform: translateY(100%);
   .panel-top {
     display: flex;
     height: 40px;
     margin-left: 60px;
-    button {
-      display: inline-block;
-      width: 212px;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: "Open Sans";
-      color: #93a2b1;
-      background-color: #ffffff;
-      border-width: 1px 1px 2px 1px;
-      border-style: solid;
-      border-color: #e4e5e9;
-      border-radius: 5px 5px 0 0;
-      box-shadow: 0px -6px 8px -2px #0000001a;
-      margin-left: 1px;
-      &:hover {
-        text-decoration: underline;
-      }
-      span {
-        font-size: 16px;
-      }
-      .icon-plus,
-      .icon-edit {
-        width: 18px;
-        height: 18px;
-        margin-right: 10px;
-      }
+
+    .icon-plus,
+    .icon-edit {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
     }
     .chevron-button {
       width: 60px;
@@ -78,7 +66,7 @@ const PanelAdminStyled = styled.div`
         height: 20px;
       }
       .icon-chevron-up {
-        display: none;
+        //display: none;
       }
     }
   }
