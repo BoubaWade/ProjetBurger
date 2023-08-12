@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import Menu from "./Menu";
-import PanelAdmin from "./PanelAdmin";
+import Admin from "./admin/Admin";
 import { useContext } from "react";
 import AdminContext from "../../../../context/AdminContext";
 
@@ -12,7 +12,7 @@ export default function Main() {
       <div>Basket</div>
       <div className="menu-admin">
         <Menu />
-        {isAdmin && <PanelAdmin />}
+        {isAdmin && <Admin />}
       </div>
     </MainStyled>
   );
