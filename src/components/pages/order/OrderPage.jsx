@@ -7,8 +7,17 @@ import { useState } from "react";
 
 export default function OrderPage() {
   const [isAdmin, setIsAdmin] = useState(false);
-  
-  const adminContextValue = { isAdmin, setIsAdmin };
+  const [isAddTabSelected, setIsAddTabSelected] = useState(true);
+  const [isEditTabSelected, setIsEditTabSelected] = useState(false);
+
+  const adminContextValue = {
+    isAdmin,
+    setIsAdmin,
+    isAddTabSelected,
+    setIsAddTabSelected,
+    isEditTabSelected,
+    setIsEditTabSelected,
+  };
 
   return (
     <AdminContext.Provider value={adminContextValue}>

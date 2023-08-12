@@ -21,7 +21,6 @@ const TabStyled = styled.button`
   border-color: #e4e5e9;
   border-radius: 5px 5px 0 0;
   box-shadow: 0px -6px 8px -2px #0000001a;
-  margin-left: 1px;
   padding: 0 22px;
   cursor: pointer;
   &:hover {
