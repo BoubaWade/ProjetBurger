@@ -2,17 +2,20 @@ import { styled } from "styled-components";
 import Main from "./Main/Main.jsx";
 import NavBar from "./NavBar/NavBar.jsx";
 import { theme } from "../../../theme/indEx";
-import AdminContext from "../../../context/AdminContext.jsx";
 import { useState } from "react";
+import OrderContext from "../../../context/OrderContext.jsx";
 
 export default function OrderPage() {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const [isAddTabSelected, setIsAddTabSelected] = useState(true);
   const [isEditTabSelected, setIsEditTabSelected] = useState(false);
 
-  const adminContextValue = {
+  const orderContextValue = {
     isAdmin,
     setIsAdmin,
+    isCollapsed,
+    setIsCollapsed,
     isAddTabSelected,
     setIsAddTabSelected,
     isEditTabSelected,
@@ -20,12 +23,12 @@ export default function OrderPage() {
   };
 
   return (
-    <AdminContext.Provider value={adminContextValue}>
+    <OrderContext.Provider value={orderContextValue}>
       <OrderPageStyled>
         <NavBar />
         <Main />
       </OrderPageStyled>
-    </AdminContext.Provider>
+    </OrderContext.Provider>
   );
 }
 

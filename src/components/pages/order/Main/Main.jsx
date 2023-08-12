@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import Menu from "./Menu";
 import Admin from "./admin/Admin";
 import { useContext } from "react";
-import AdminContext from "../../../../context/AdminContext";
+import AdminContext from "../../../../context/OrderContext";
 
 export default function Main() {
   const { isAdmin } = useContext(AdminContext);
