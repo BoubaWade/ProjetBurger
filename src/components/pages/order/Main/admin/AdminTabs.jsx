@@ -14,13 +14,14 @@ export default function AdminTabs() {
     setIsAddTabSelected,
     isEditTabSelected,
     setIsEditTabSelected,
+    handleClickAddTab,
   } = useContext(OrderContext);
 
-  const handleClickAddTab = () => {
-    setIsCollapsed(false);
-    setIsAddTabSelected(true);
-    setIsEditTabSelected(false);
-  };
+  //const handleClickAddTab = () => {
+  //  setIsCollapsed(false);
+  //  setIsAddTabSelected(true);
+  //  setIsEditTabSelected(false);
+  //};
   const handleClickEditTab = () => {
     setIsCollapsed(false);
     setIsAddTabSelected(false);

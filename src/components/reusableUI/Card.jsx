@@ -1,10 +1,28 @@
 import { styled } from "styled-components";
 import PrimaryButton from "./PrimaryButton";
 import { theme } from "../../theme/indEx";
+import { TiDelete } from "react-icons/ti";
+import { useContext } from "react";
+import OrderContext from "../../context/OrderContext";
 
-export default function Card({ imageSource, title, bottomLeft }) {
+export default function Card({ id, imageSource, title, bottomLeft, onDelete }) {
+  const { isAdmin } = useContext(OrderContext);
+
+  //const onDelete = (id) => {
+  //  alert("Hello!");
+  //  handleDeleteProduct(id);
+  //};
+
   return (
-    <CardStyled>
+    <CardStyled key={id}>
+      {isAdmin && (
+        <button className="delete-button" onClick={onDelete}>
+          <TiDelete
+            className="icon"
+            //onClick={(id) => handleDeleteProduct(id)}
+          />
+        </button>
+      )}
       <img src={imageSource} alt={title} />
       <div className="description-container">
         <h2 className="description-top">{title}</h2>
@@ -18,6 +36,7 @@ export default function Card({ imageSource, title, bottomLeft }) {
 }
 
 const CardStyled = styled.div`
+  position: relative;
   width: 240px;
   height: 330px;
   display: flex;
@@ -29,6 +48,27 @@ const CardStyled = styled.div`
   &:hover {
     transform: scale(1.05);
     transition: 0.2s ease;
+  }
+  .delete-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    top: 15px;
+    right: 15px;
+    border: none;
+    cursor: pointer;
+    .icon {
+      width: 100%;
+      height: 100%;
+      color: ${theme.colors.primary};
+      &:hover {
+        color: #e25549;
+      }
+      &:active {
+        color: ${theme.colors.primary};
+      }
+    }
   }
   img {
     width: 200px;
@@ -66,6 +106,11 @@ const CardStyled = styled.div`
       .bottom-right {
         width: 95px;
         height: 38px;
+        font-size:13px;
+        &:active {
+          background-color: ${theme.colors.primary};
+          color: white;
+        }
       }
     }
   }

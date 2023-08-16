@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 import { theme } from "../../theme/indEx";
 
-export default function TextInput({value, onChange, Icon, ...restProps}) {
+export default function TextInput({value, onChange, Icon, className, ...restProps}) {
   return (
-    <InputStyled >
+    <InputStyled className={className}>
         {Icon && Icon}
         <input
           type="text"

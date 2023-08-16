@@ -9,4 +9,10 @@ export default createContext({
   setIsAddTabSelected: () => {},
   isEditTabSelected: false,
   setIsEditTabSelected: () => {},
+  products: [],
+  handleAddProduct: () => {},
+  handleDeleteProduct: () => {},
+  newProduct: [],
+  setNewProduct: () => {},
+  handleClickAddTab: () => {},
 });
