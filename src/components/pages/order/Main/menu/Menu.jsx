@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
+import { fakeMenu2 } from "../../../../../fakeData/fakeMenu";
 import { styled } from "styled-components";
-import Card from "../../../reusableUI/Card.jsx";
-import { formatPrice } from "../../../../utils/maths";
-import OrderContext from "../../../../context/OrderContext";
-import EmptyMenuAdmin from "./admin/EmptyMenuAdmin";
+import Card from "../../../../reusableUI/Card.jsx";
+import { formatPrice } from "../../../../../utils/maths";
+import OrderContext from "../../../../../context/OrderContext";
+import EmptyMenuAdmin from "./EmptyMenuAdmin";
 import EmptyMenuClient from "./EmptyMenuClient.jsx";
 
 const DEFAULT_IMAGE = "../../../../../public/images/coming-soon.png";

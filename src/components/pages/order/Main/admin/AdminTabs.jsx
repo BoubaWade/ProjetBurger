@@ -17,11 +17,6 @@ export default function AdminTabs() {
     handleClickAddTab,
   } = useContext(OrderContext);
 
-  //const handleClickAddTab = () => {
-  //  setIsCollapsed(false);
-  //  setIsAddTabSelected(true);
-  //  setIsEditTabSelected(false);
-  //};
   const handleClickEditTab = () => {
     setIsCollapsed(false);
     setIsAddTabSelected(false);
@@ -31,25 +26,43 @@ export default function AdminTabs() {
   const handleClick = () => {
     setIsCollapsed(!isCollapsed);
   };
+
+  const buttonTabs = [
+    {
+      id: 0,
+      onClick: handleClick,
+      Icon: isCollapsed ? <FiChevronUp /> : <FiChevronDown />,
+      className: isCollapsed ? "is-active" : "",
+    },
+    {
+      id: 1,
+      onClick: handleClickAddTab,
+      Icon: <AiOutlinePlus />,
+      label: "Ajouter un produit",
+      className: isAddTabSelected ? "is-active" : "",
+    },
+    {
+      id: 2,
+      onClick: handleClickEditTab,
+      Icon: <MdModeEditOutline />,
+      label: "Modifier un produit",
+      className: isEditTabSelected ? "is-active" : "",
+    },
+  ];
+
   return (
     <AdminTabsStyled>
-      <Tab
-        onClick={handleClick}
-        Icon={isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
-        className={isCollapsed ? "is-active" : ""}
-      />
-      <Tab
-        onClick={handleClickAddTab}
-        Icon={<AiOutlinePlus />}
-        label={"Ajouter un produit"}
-        className={isAddTabSelected ? "is-active" : ""}
-      />
-      <Tab
-        onClick={handleClickEditTab}
-        Icon={<MdModeEditOutline />}
-        label={"Modifier un produit"}
-        className={isEditTabSelected ? "is-active" : ""}
-      />
+      {buttonTabs.map((tab) => {
+        return (
+          <Tab
+            key={tab.id}
+            onClick={tab.onClick}
+            Icon={tab.Icon}
+            label={tab.label}
+            className={tab.className}
+          />
+        );
+      })}
     </AdminTabsStyled>
   );
 }

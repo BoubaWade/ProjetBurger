@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Menu from "./Menu";
+import Menu from "./menu/Menu";
 import Admin from "./admin/Admin";
 import { useContext } from "react";
 import AdminContext from "../../../../context/OrderContext";
